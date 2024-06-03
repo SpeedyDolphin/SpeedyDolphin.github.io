@@ -1,6 +1,8 @@
+body{
+    background: url('../../../public/images/backgroundTemp.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 
-.landingImg {
-    width:100%;
 }
 .header {
     position: absolute;
