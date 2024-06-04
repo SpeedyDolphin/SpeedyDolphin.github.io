@@ -1,8 +1,11 @@
 body{
     background: url('../../../public/images/backgroundTemp.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 
+}
+.homePageContainer{
+    
 }
 .header {
     position: absolute;
