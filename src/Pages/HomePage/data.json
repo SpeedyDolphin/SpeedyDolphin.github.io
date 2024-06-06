@@ -1,0 +1,14 @@
+[
+    {
+        "title": "About",
+        "content": "Hey I’m a creative person who loves making things and doesn’t shy away from a challenge.\nAlways seeking new experiences ^-^" 
+
+    }, 
+    {
+        "title": "Experience", 
+        "content" : {
+            "title" : "Education",
+            "content" : "I'm just starting out my professional career so I'll start this section out with my schooling. I graduated from the University of California Irvine with a bachelors degree in computer science."
+        }
+    }
+]

@@ -1,12 +1,17 @@
-body{
-    background: url('../../../public/images/backgroundTemp.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.backgroundImage{
+    position: fixed;
+    z-index: -1;
+    min-width: 100vw;
+    object-fit: cover;
 }
 .homePageContainer{
-    
+    display : flex; 
+    .left{
+        flex-grow: 1;
+        color : white;
+    }
 }
+
 .header {
     position: absolute;
 }

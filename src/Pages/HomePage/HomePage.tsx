@@ -6,9 +6,12 @@ function HomePage() {
   return (
     <div className={styles.HomePage}>
       <div className={styles.homePageContainer}>
-        <TxtBar className={styles.left}>
-          {/* <p>Hello!</p> */}
-          <></>
+        <img src="./images/backgroundTemp.jpg" className={styles.backgroundImage}></img>
+        <div className={styles.left}>
+          <p>hello</p>
+        </div>
+        <TxtBar className={styles.right}>
+          <p>right</p>
         </TxtBar>
 
       </div>

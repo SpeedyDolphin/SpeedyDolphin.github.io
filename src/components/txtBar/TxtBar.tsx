@@ -10,9 +10,7 @@ interface TxtBarProps {
 function TxtBar({children}: TxtBarProps) {   
   return (
     <div className={styles.txtBar}>
-      {/* <div className="centerBox"> */}
-          {children}
-      {/* </div> */}
+      {children}
     </div>
   );
 }
