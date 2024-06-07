@@ -7,9 +7,22 @@ function HomePage() {
     <div className={styles.HomePage}>
       <div className={styles.homePageContainer}>
         <img src="./images/backgroundTemp.jpg" className={styles.backgroundImage}></img>
+
         <div className={styles.left}>
-          <p>hello</p>
+          <div className={styles.titleText}>
+            <h1>Athena Rubio</h1>
+            <h5>Software Dev ✦ Artist</h5>
+
+            <div className='linkButtons'>
+              <button type="button">LinkedIn</button>
+              <button type="button">Github</button>
+            </div>
+
+          </div>
+
+         
         </div>
+
         <TxtBar className={styles.right}>
           <p>right</p>
         </TxtBar>
