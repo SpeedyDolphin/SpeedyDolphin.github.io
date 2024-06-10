@@ -1,0 +1,8 @@
+.imageButton{
+    cursor: pointer;
+    padding: .5em;
+}
+
+.imageButton:hover {
+    filter: brightness(85%);
+}
