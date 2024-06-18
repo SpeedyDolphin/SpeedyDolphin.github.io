@@ -3,19 +3,19 @@ import "./Entry.css"
 
 interface EntryProps {
     /** Child components */
-    title : string
-    content : string
-    children : ReactNode
+  /** Child components */
+  title : string
+  content? : string
+  subContent? : EntryProps[]
 }
-
-function Entry({title, content, children}: EntryProps) {   
-  return (
-    <div className="overflowHider">
-      <div className="centerBox">
-          
-      </div>
-    </div>
-  );
+function Entry({title, content, subContent}: EntryProps) {  
+  console.log("I've been called!") 
+    return (
+      <>
+        <h4>{title}</h4>
+        {content !== undefined && <p>{content}</p>}
+      </>
+    );
 }
   
 export default Entry;

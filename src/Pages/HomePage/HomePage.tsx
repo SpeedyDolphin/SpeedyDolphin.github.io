@@ -2,6 +2,17 @@ import styles from './HomePage.module.css'
 import {Link} from "react-router-dom";
 import TxtBar from '../../components/txtBar/TxtBar';
 import ImageButton from '../../components/imageButton/imageButton';
+import rawData from './data.json';
+import Entry from '../../components/entries/Entry';
+
+interface txtBarData {
+  /** Child components */
+  title : string
+  content? : string
+  subContent? : txtBarData
+}
+
+const data : any = rawData
 
 function HomePage() {
   return (
@@ -26,6 +37,11 @@ function HomePage() {
 
         <TxtBar className={styles.right}>
           <p>Coming Soon!</p>
+           {/* Populate my life */}
+           {data.map((title : any, content : any, subContent : any) => (
+            <Entry title={title} content={content} subContent={subContent}></Entry>
+           ))}
+
         </TxtBar>
 
       </div>
