@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "./Entry.css"
+import styles from './Entry.module.css'
 
 interface EntryProps {
     /** Child components */
@@ -8,19 +8,19 @@ interface EntryProps {
   content? : string
   subContent? : EntryProps[]
 }
-function Entry({title, content, subContent}: EntryProps) {  
-  console.log("I've been called!") 
-  console.log("Title")
-  console.log(title)
-  console.log("Content ")
-  console.log(content)
-  console.log("subContent ")
-  console.log(subContent)
+function Entry({title, content, subContent}: EntryProps) { 
     return (
-      <>
+      <div className={styles.entry}>
         <h4>{title}</h4>
-        {content !== undefined && <p>{content}</p>}
-      </>
+        {content !== undefined && 
+          <p>{content}</p>
+        }
+        {subContent !== undefined &&
+          subContent.map((entry : EntryProps) => (
+            <Entry key={entry.title} title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
+           ))
+        }
+      </div>
     );
 }
   

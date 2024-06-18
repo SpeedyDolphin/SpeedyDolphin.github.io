@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import ImageButton from '../../components/imageButton/imageButton';
 import rawData from './data.json';
 import Entry from '../../components/entries/Entry';
+import TxtBar from '../../components/txtBar/TxtBar';
 
 interface txtBarData {
   /** Child components */
@@ -34,14 +35,13 @@ function HomePage() {
          
         </div>
 
-        <div className={styles.right}>
-          <p>Coming Soon!</p>
+        <TxtBar className={styles.right}>
            {/* Populate my life */}
            {data.map((entry : txtBarData) => (
-            <Entry title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
+            <Entry key={entry.title} title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
            ))}
 
-        </div>
+        </TxtBar>
 
       </div>
     </div>
