@@ -9,7 +9,7 @@ interface txtBarData {
   /** Child components */
   title : string
   content? : string
-  subContent? : txtBarData
+  subContent? : txtBarData[]
 }
 
 const data : any = rawData
@@ -38,8 +38,8 @@ function HomePage() {
         <TxtBar className={styles.right}>
           <p>Coming Soon!</p>
            {/* Populate my life */}
-           {data.map((title : any, content : any, subContent : any) => (
-            <Entry title={title} content={content} subContent={subContent}></Entry>
+           {data.map((entry : txtBarData) => (
+            <Entry title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
            ))}
 
         </TxtBar>
