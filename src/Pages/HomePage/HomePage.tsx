@@ -1,6 +1,5 @@
 import styles from './HomePage.module.css'
 import {Link} from "react-router-dom";
-import TxtBar from '../../components/txtBar/TxtBar';
 import ImageButton from '../../components/imageButton/imageButton';
 import rawData from './data.json';
 import Entry from '../../components/entries/Entry';
@@ -35,14 +34,14 @@ function HomePage() {
          
         </div>
 
-        <TxtBar className={styles.right}>
+        <div className={styles.right}>
           <p>Coming Soon!</p>
            {/* Populate my life */}
            {data.map((entry : txtBarData) => (
             <Entry title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
            ))}
 
-        </TxtBar>
+        </div>
 
       </div>
     </div>
