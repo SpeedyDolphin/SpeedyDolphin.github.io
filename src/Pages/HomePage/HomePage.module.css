@@ -8,8 +8,15 @@
     display : flex; 
     .left{
         flex-grow: 1;
-        display: flex;
         color : white;
+        
+        .navBar{
+            position: relative;
+            float: right;
+            padding-right: 3em;
+            top: 40%;
+
+        }
 
         .titleText{
             position: fixed;

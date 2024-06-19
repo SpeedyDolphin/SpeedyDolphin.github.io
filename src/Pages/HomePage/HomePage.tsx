@@ -12,7 +12,7 @@ interface txtBarData {
   subContent? : txtBarData[]
 }
 
-const data : any = rawData
+const data : txtBarData[] = rawData
 
 function HomePage() {
   return (
@@ -21,6 +21,12 @@ function HomePage() {
         <img src="./images/backgroundTemp.jpg" alt='' className={styles.backgroundImage}></img>
 
         <div className={styles.left}>
+          <div className={styles.navBar}>
+            {/* Populate the titles */}
+            {data.map((entry : txtBarData) => (
+              <h4>{entry.title}</h4>
+            ))}
+          </div>
           <div className={styles.titleText}>
             <h1>Athena Rubio</h1>
             <h5>Software Dev ✦ Artist</h5>
