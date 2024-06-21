@@ -10,7 +10,7 @@ interface EntryProps {
 }
 function Entry({title, content, subContent}: EntryProps) { 
     return (
-      <div className={styles.entry}>
+      <div className={styles.entry} id={title}>
         <h4>{title}</h4>
         {content !== undefined && 
           <p>{content}</p>

@@ -1,0 +1,17 @@
+
+.navBarItem{
+    margin-top: .20em;
+    margin-bottom: .20em;
+    font-size: 1.25em;
+    padding: .5em;
+}
+.navBarItem:hover {
+    filter: drop-shadow(8px 8px 10px #DA7635);
+    padding-top: .25em;
+    padding-bottom: .75em;
+    /* box-shadow:  -1px 1px #77aaff,
+         -2px 2px #77aaff,
+         -3px 3px #77aaff,
+         -4px 4px #77aaff,
+         -5px 5px #77aaff; */
+  }

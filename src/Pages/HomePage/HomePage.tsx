@@ -4,6 +4,7 @@ import ImageButton from '../../components/imageButton/imageButton';
 import rawData from './data.json';
 import Entry from '../../components/entries/Entry';
 import TxtBar from '../../components/txtBar/TxtBar';
+import NavBarItem from '../../components/navBarItem/NavBarItem';
 
 interface txtBarData {
   /** Child components */
@@ -24,7 +25,7 @@ function HomePage() {
           <div className={styles.navBar}>
             {/* Populate the titles */}
             {data.map((entry : txtBarData) => (
-              <h4>{entry.title}</h4>
+              <NavBarItem text={entry.title}></NavBarItem>
             ))}
           </div>
           <div className={styles.titleText}>
