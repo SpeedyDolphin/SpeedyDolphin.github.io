@@ -2,5 +2,12 @@
     min-height: 100vh;
     scroll-snap-align: start;
     color: white;
+    padding-left: 1.5em;
+    padding-top: 3em;
+    padding-bottom: 0em;
+    .entry{
+        padding-top: 1em;
+        padding-right: 2em;
+    }
     
 }
