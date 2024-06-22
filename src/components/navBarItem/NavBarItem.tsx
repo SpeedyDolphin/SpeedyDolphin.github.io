@@ -1,3 +1,4 @@
+import { title } from 'process';
 import styles from './NavBarItem.module.css'
 
 
@@ -15,7 +16,7 @@ function NavBarItem({text}: NavBarItemProps) {
 
 
   return (
-    <h2 className={styles.navBarItem} onClick={test}>{"✦ "+ text}</h2>
+    <h2 className={styles.navBarItem} id={"navBarItem_"+text} onClick={test}>{"✦ "+ text}</h2>
   );
 }
   
