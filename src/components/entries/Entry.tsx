@@ -47,6 +47,8 @@ function Entry({title, content, subContent}: EntryProps) {
             ))
         }
       </InView>
+      <InView className={styles.footer} threshold={[.1]} delay={300} onChange={(inView, entry) => callback(inView)}>
+      </InView>
     </div>
   );
 }
