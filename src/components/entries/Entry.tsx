@@ -1,6 +1,4 @@
-import { ReactNode } from "react";
-import React, { useState } from "react";
-import { useInView, InView } from "react-intersection-observer";
+import {InView } from "react-intersection-observer";
 import styles from './Entry.module.css'
 
 interface EntryProps {
@@ -16,10 +14,17 @@ function Entry({title, content, subContent}: EntryProps) {
   {
     if(!inView){
       willScroll = true;
+      //Change color of navBar title 
       const element = document.getElementById("navBarItem_"+title);
       if (element !== null) element.style.color = "#FFFFFF";
     }
     else{
+      if (willScroll == true){
+        const element = document.getElementById(title);
+        if (element !== null) element.scrollIntoView({behavior: "smooth"});
+      }
+      willScroll = false
+      //Change color of navBar title
       const element = document.getElementById("navBarItem_"+title);
       if (element !== null) element.style.color = "#DA7635";
     }
@@ -28,7 +33,7 @@ function Entry({title, content, subContent}: EntryProps) {
 
   return (
     <div className={styles.entry} id={title}>
-      <InView threshold={[0,.6]} onChange={(inView, entry) => callback(inView)}>
+      <InView threshold={[.1]} delay={300} onChange={(inView, entry) => callback(inView)}>
         <h4>{title}</h4>
         {content !== undefined && 
           <p>{content}</p>
