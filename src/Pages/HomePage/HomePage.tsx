@@ -1,10 +1,12 @@
 import styles from './HomePage.module.css'
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+import { useState } from 'react';
 import ImageButton from '../../components/imageButton/imageButton';
 import rawData from './data.json';
 import Entry from '../../components/entries/Entry';
 import TxtBar from '../../components/txtBar/TxtBar';
 import NavBarItem from '../../components/navBarItem/NavBarItem';
+
 
 interface txtBarData {
   /** Child components */
@@ -16,6 +18,7 @@ interface txtBarData {
 const data : txtBarData[] = rawData
 
 function HomePage() {
+  const [canScrollSnap, setCanScrollSnap] = useState(false);
   return (
     <div className={styles.HomePage}>
       <div className={styles.homePageContainer}>
@@ -25,7 +28,7 @@ function HomePage() {
           <div className={styles.navBar}>
             {/* Populate the titles */}
             {data.map((entry : txtBarData) => (
-              <NavBarItem text={entry.title}></NavBarItem>
+              <NavBarItem text={entry.title} setCanScrollSnap={setCanScrollSnap} canScrollSnap={canScrollSnap}></NavBarItem>
             ))}
           </div>
           <div className={styles.titleText}>
@@ -45,7 +48,7 @@ function HomePage() {
         <TxtBar className={styles.right}>
            {/* Populate my life */}
            {data.map((entry : txtBarData) => (
-            <Entry key={entry.title} title={entry.title} content={entry.content} subContent={entry.subContent}></Entry>
+            <Entry key={entry.title} title={entry.title} content={entry.content} subContent={entry.subContent} canScrollSnap={canScrollSnap}></Entry>
            ))}
 
         </TxtBar>

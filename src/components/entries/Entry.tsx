@@ -6,9 +6,14 @@ interface EntryProps {
   /** Child components */
   title : string
   content? : string
-  subContent? : EntryProps[]
+  subContent? : SubContent[]
+  canScrollSnap : boolean
 }
-function Entry({title, content, subContent}: EntryProps) { 
+interface SubContent{
+  title : string
+  content? : string
+}
+function Entry({title, content, subContent, canScrollSnap}: EntryProps) { 
   var willScroll : boolean= true
   function callback(inView:boolean)
   {
@@ -19,7 +24,9 @@ function Entry({title, content, subContent}: EntryProps) {
       if (element !== null) element.style.color = "#FFFFFF";
     }
     else{
-      if (willScroll == true){
+      if (willScroll === true && canScrollSnap === true){
+        console.log("Triggering Scroll Snap", canScrollSnap);
+
         const element = document.getElementById(title);
         if (element !== null) element.scrollIntoView({behavior: "smooth"});
       }
@@ -39,7 +46,7 @@ function Entry({title, content, subContent}: EntryProps) {
           <p>{content}</p>
         }
         {subContent !== undefined &&
-          subContent.map((entry : EntryProps) => (
+          subContent.map((entry : SubContent) => (
             <div className={styles.nestedEntry}>
               <h5>{entry.title}</h5>
               {entry.content !== undefined && <p>{entry.content}</p>}
